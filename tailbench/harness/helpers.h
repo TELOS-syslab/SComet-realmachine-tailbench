@@ -81,15 +81,20 @@ static int sendfull(int fd, const char* msg, int len, int flags) {
 
 static int recvfull(int fd, char* msg, int len, int flags) {
     int remaining = len;
+    // printf("fd: %d\n", fd);
+    // printf("inital remaining: %d\n", remaining);
     char* cur = msg;
     int recvd;
 
     while (remaining > 0) {
-        recvd = recv(fd, reinterpret_cast<void*>(cur), len, flags);
+        recvd = recv(fd, reinterpret_cast<void*>(cur), len, flags | MSG_WAITALL);
         if ((recvd == -1) || (recvd == 0)) break;
         cur += recvd;
         remaining -= recvd;
+        // printf("recvd: %d\n", recvd);
+        // printf("remaining: %d\n", remaining);
     }
+    // printf("\n");
 
     return (len - remaining);
 }

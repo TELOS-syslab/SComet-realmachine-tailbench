@@ -38,6 +38,9 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <ctime>
 
 /*******************************************************************************
  * IntegratedServer
@@ -82,6 +85,9 @@ void IntegratedServer::sendResp(int id, const void* data, size_t len) {
         Client::dumpStats();
         syscall(SYS_exit_group, 0);
     }
+    if ((finishedReqs - warmupReqs) % int(Client::lambda * 1e7) == 0) {
+        Client::dumpStats();
+    } 
 
     pthread_mutex_unlock(&lock);
 }

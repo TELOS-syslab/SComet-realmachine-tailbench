@@ -7,14 +7,16 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
-from scipy import mean
-
+from numpy import mean
+import time
 
 class Lat(object):
     def __init__(self, fileName):
         f = open(fileName, 'rb')
         a = np.fromfile(f, dtype=np.uint64)
-        self.reqTimes = a.reshape((int(a.shape[0]/3), 3))
+        valid_len = (a.shape[0] // 3) * 3
+        a = a[:valid_len]
+        self.reqTimes = a.reshape((-1, 3))
         f.close()
 
     def parseQueueTimes(self):
@@ -68,7 +70,8 @@ if __name__ == '__main__':
         qTimes = [l/1e6 for l in latsObj.parseQueueTimes()]
         svcTimes = [l/1e6 for l in latsObj.parseSvcTimes()]
         sjrnTimes = [l/1e6 for l in latsObj.parseSojournTimes()]
-        f = open('lats.txt','w')
+
+        '''f = open('lats.txt','w')
 
         f.write('%12s | %12s | %12s\n\n' \
                 % ('QueueTimes', 'ServiceTimes', 'SojournTimes'))
@@ -76,21 +79,32 @@ if __name__ == '__main__':
         for (q, svc, sjrn) in zip(qTimes, svcTimes, sjrnTimes):
             f.write("%12s | %12s | %12s\n" \
                     % ('%.3f' % q, '%.3f' % svc, '%.3f' % sjrn))
-        f.close()
+        f.close()'''
+
         svc_mean = mean(svcTimes)
-        svc_p95 = stats.scoreatpercentile(svcTimes, 95)
-        svc_p99 = stats.scoreatpercentile(svcTimes, 99)
+        svc_p95 = np.percentile(svcTimes, 95)
+        svc_p99 = np.percentile(svcTimes, 99)
         svc_maxLat = max(svcTimes)
 
         sjrn_mean = mean(sjrnTimes)
-        sjrn_p95 = stats.scoreatpercentile(sjrnTimes, 95)
-        sjrn_p99 = stats.scoreatpercentile(sjrnTimes, 99)
+        sjrn_p95 = np.percentile(sjrnTimes, 95)
+        sjrn_p99 = np.percentile(sjrnTimes, 99)
         sjrn_maxLat = max(sjrnTimes)
+
+        print("service latency percentiles")
+        '''for i in range(1, 101):
+            svc_p = stats.scoreatpercentile(svcTimes, i)
+            print(f"{i}th percentile: ", svc_p)'''
+        sjrn_p = np.percentile(sjrnTimes, list(range(101)))
+        for i in range(101):
+            print(f"{i}th percentile: ", sjrn_p[i])
+            
         print("svc: mean %.3f ms | p95 %.3f ms | p99 %.3f ms | max %.3f ms" \
                 % (svc_mean, svc_p95, svc_p99, svc_maxLat))
         print("end2end: mean %.3f ms | p95 %.3f ms | p99 %.3f ms | max %.3f ms" \
                 % (sjrn_mean, sjrn_p95, sjrn_p99, sjrn_maxLat))
-
+        
+        print(f"{int(time.time()*1000)} avg:{sjrn_mean:.3f} p95:{sjrn_p95:.3f} p99:{sjrn_p99:.3f} count:{len(sjrnTimes)}")
         
         """
         draw_pdf(svcTimes, 1000)

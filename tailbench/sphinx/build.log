@@ -1,0 +1,2 @@
+export PKG_CONFIG_PATH="/usr" && \
+g++ client.o ../harness/client.o ../harness/tbench_server_integrated.o decoder.o -o decoder_integrated `pkg-config --libs pocketsphinx sphinxbase` -pthread -lrt

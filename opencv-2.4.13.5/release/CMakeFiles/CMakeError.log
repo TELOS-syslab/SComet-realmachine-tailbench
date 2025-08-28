@@ -1,0 +1,56 @@
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option '-Wno-unnamed-type-template-args' may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f2853/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_f2853.dir/build.make CMakeFiles/cmTC_f2853.dir/build
+gmake[1]: Entering directory '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f2853.dir/src.cxx.o
+/usr/bin/g++   -O3 -DNDEBUG    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_f2853.dir/src.cxx.o -c /home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option '-Wmissing-prototypes' is valid for C/ObjC but not for C++
+cc1plus: warning: command-line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring '#pragma  ' [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option '-Wno-unnamed-type-template-args' may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_f2853
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2853.dir/link.txt --verbose=1
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/cmTC_f2853.dir/src.cxx.o -o cmTC_f2853 
+gmake[1]: Leaving directory '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option '-Wno-unnamed-type-template-args' may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f2318/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_f2318.dir/build.make CMakeFiles/cmTC_f2318.dir/build
+gmake[1]: Entering directory '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f2318.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG    -fsigned-char -W -Wall -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_f2318.dir/src.c.o -c /home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option '-Wsign-promo' is valid for C++/ObjC++ but not for C
+cc1: warning: command-line option '-Wno-delete-non-virtual-dtor' is valid for C++/ObjC++ but not for C
+/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring '#pragma  ' [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option '-Wno-unnamed-type-template-args' may have been intended to silence earlier diagnostics
+Linking C executable cmTC_f2318
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2318.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/cmTC_f2318.dir/src.c.o -o cmTC_f2318 
+gmake[1]: Leaving directory '/home/wjy/Tailbench/opencv-2.4.13.5/release/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+

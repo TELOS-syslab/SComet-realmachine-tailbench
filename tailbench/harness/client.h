@@ -51,7 +51,7 @@ class Client {
         std::vector<uint64_t> sjrnTimes;
 
         void _startRoi();
-
+        size_t last_dump_idx = 0;
     public:
         Client(int nthreads);
 

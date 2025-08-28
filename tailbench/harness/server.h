@@ -61,6 +61,7 @@ class IntegratedServer : public Server, public Client {
         void sendResp(int id, const void* data, size_t size);
 };
 
+
 class NetworkedServer : public Server {
     private:
         pthread_mutex_t sendLock;

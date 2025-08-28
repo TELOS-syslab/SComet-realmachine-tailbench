@@ -36,6 +36,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <ctime>
 
 /*******************************************************************************
  * Client
@@ -146,19 +147,34 @@ void Client::startRoi() {
     pthread_mutex_unlock(&lock);
 }
 
+// void Client::dumpStats() {
+//     std::ofstream out("lats.bin", std::ios::out | std::ios::binary);
+//     int reqs = sjrnTimes.size();
+
+//     for (int r = 0; r < reqs; ++r) {
+//         out.write(reinterpret_cast<const char*>(&queueTimes[r]), 
+//                     sizeof(queueTimes[r]));
+//         out.write(reinterpret_cast<const char*>(&svcTimes[r]), 
+//                     sizeof(svcTimes[r]));
+//         out.write(reinterpret_cast<const char*>(&sjrnTimes[r]), 
+//                     sizeof(sjrnTimes[r]));
+//     }
+//     out.close();
+// }
+
 void Client::dumpStats() {
     std::ofstream out("lats.bin", std::ios::out | std::ios::binary);
-    int reqs = sjrnTimes.size();
 
-    for (int r = 0; r < reqs; ++r) {
-        out.write(reinterpret_cast<const char*>(&queueTimes[r]), 
-                    sizeof(queueTimes[r]));
-        out.write(reinterpret_cast<const char*>(&svcTimes[r]), 
-                    sizeof(svcTimes[r]));
-        out.write(reinterpret_cast<const char*>(&sjrnTimes[r]), 
-                    sizeof(sjrnTimes[r]));
+    // 只输出自上次dump以来的新请求
+    for (size_t r = last_dump_idx; r < sjrnTimes.size(); ++r) {
+        out.write(reinterpret_cast<const char*>(&queueTimes[r]), sizeof(queueTimes[r]));
+        out.write(reinterpret_cast<const char*>(&svcTimes[r]), sizeof(svcTimes[r]));
+        out.write(reinterpret_cast<const char*>(&sjrnTimes[r]), sizeof(sjrnTimes[r]));
     }
     out.close();
+
+    // 更新下标
+    last_dump_idx = sjrnTimes.size();
 }
 
 /*******************************************************************************

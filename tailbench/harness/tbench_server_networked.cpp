@@ -202,12 +202,15 @@ size_t NetworkedServer::recvReq(int id, void** data) {
         assert(fd != -1);
 
         int len = sizeof(Request) - MAX_REQ_BYTES; // Read request header first
+        // printf("header len: %d\n", len);
 
         req = &reqbuf[id];
         int recvd = recvfull(fd, reinterpret_cast<char*>(req), len, 0);
 
         success = checkRecv(recvd, len, fd);
         if (!success) continue;
+
+        // printf("req len: %ld\n", req->len);
         
         recvd = recvfull(fd, req->data, req->len, 0);
 
