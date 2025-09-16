@@ -38,6 +38,7 @@ class Server {
         uint64_t finishedReqs;
         uint64_t maxReqs;
         uint64_t warmupReqs;
+        double real_time;
 
         std::vector<ReqInfo> reqInfo; // Request info for each thread 
 
@@ -47,6 +48,7 @@ class Server {
             maxReqs = getOpt("TBENCH_MAXREQS", 0);
             warmupReqs = getOpt("TBENCH_WARMUPREQS", 0);
             reqInfo.resize(nthreads);
+            real_time = getOpt("real_time", 0);
         }
 
         virtual size_t recvReq(int id, void** data) = 0;

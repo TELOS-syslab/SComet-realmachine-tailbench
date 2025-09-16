@@ -85,8 +85,8 @@ void IntegratedServer::sendResp(int id, const void* data, size_t len) {
         Client::dumpStats();
         syscall(SYS_exit_group, 0);
     }
-    if ((finishedReqs - warmupReqs) % int(Client::lambda * 1e7) == 0) {
-        Client::dumpStats();
+    if (real_time > 0 && (finishedReqs - warmupReqs) % int(Client::lambda * 1e9 * real_time) == 0) {
+        Client::dumpStats_real_time();
     } 
 
     pthread_mutex_unlock(&lock);

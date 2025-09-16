@@ -60,6 +60,7 @@ class Client {
 
         void startRoi();
         void dumpStats();
+        void dumpStats_real_time();
 
 };
 

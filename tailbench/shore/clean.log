@@ -1,4 +1,322 @@
-cat clean.sh >clean 
-chmod a+x clean
-cat clean.sh >clean 
-chmod a+x clean
+CDPATH="${ZSH_VERSION+.}:" && cd . && autoconf
+/bin/bash ./config.status --recheck
+running CONFIG_SHELL=/bin/bash /bin/bash ./configure --enable-dora --enable-dbgsymbols CXXFLAGS=-std=c++98 -g --no-create --no-recursion
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking dependency style of gcc... gcc3
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... unsupported
+checking for g++ option to enable C++98 features... none needed
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking how to run the C preprocessor... gcc -E
+checking GCC-specific checks... 
+checking whether the compiler is gcc 2.96... no
+checking whether the compiler is gcc 3.4 or later ... yes
+checking whether the compiler is gcc 3.x ... no
+checking whether the gcc version is known broken: 4.1.x, x < 2 or 2.95... no
+checking whether the gcc version has known issues: 4.0.1... no
+checking for ranlib... ranlib
+checking for perl... /usr/bin/perl
+checking for dtrace... no
+checking for rm... rm
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for fcntl.h... yes
+checking for memory.h... yes
+checking for string.h... (cached) yes
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... yes
+checking for sys/socket.h... yes
+checking for vprintf... yes
+checking for ptrdiff_t... yes
+checking for uchar_t... no
+checking for ushort_t... no
+checking for ulong_t... no
+checking for char_t... no
+checking for short_t... no
+checking for long_t... no
+checking for size_t... yes
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for uid_t in sys/types.h... yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for ptrdiff_t... (cached) yes
+checking for gcc options needed to detect all undeclared functions... none needed
+checking whether MAP_ANONYMOUS is declared... yes
+checking whether MAP_ANON is declared... yes
+checking whether MAP_ALIGN is declared... no
+checking whether MAP_FIXED is declared... yes
+checking whether MAP_NORESERVE is declared... yes
+checking for memcntl... no
+checking for getpagesizes... no
+checking for struct stat.st_blksize... yes
+checking for atomic.h... no
+checking whether byte ordering is bigendian... no
+checking for membar_enter... no
+checking for posix_spawn... yes
+checking for clock_gettime... yes
+checking for gettimeofday... yes
+checking for strerror... yes
+checking size of pthread_t... 8
+checking for semaphore.h... yes
+checking for clock_gettime in -lrt... yes
+checking for pthread_attr_getstack in -lpthread... yes
+checking for pthread_attr_getstacksize in -lpthread... yes
+checking for pthread_barrier_wait in -lpthread... yes
+checking architecture... linux amd64,x86_64
+checking whether the ios headers exist without .h suffix... yes
+checking for Hugepagesize... 2048
+checking for posix_memalign... yes
+checking for memalign... yes
+checking for valloc... yes
+checking for time.h... yes
+checking for gethrtime... no
+checking for getopt... yes
+checking for uname... yes
+Debug level 0 (optimized)
+Debugger symbols true
+checking whether to enable DORA-support... yes
+checking whether to enable PLP tracing... no
+checking whether to enable HISTOGRAM-support... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+ /bin/bash ./config.status
+config.status: creating Makefile
+config.status: creating config/Makefile
+config.status: creating tools/Makefile
+config.status: creating src/Makefile
+config.status: creating src/atomic_ops/Makefile
+config.status: creating src/fc/Makefile
+config.status: creating src/fc/tests/Makefile
+config.status: creating src/sthread/Makefile
+config.status: creating src/sthread/tests/Makefile
+config.status: creating src/common/Makefile
+config.status: creating src/common/tests/Makefile
+config.status: creating src/sm/Makefile
+config.status: creating src/sm/tests/Makefile
+config.status: creating src/sm/smsh/Makefile
+config.status: creating src/sm/smsh/scripts/Makefile
+config.status: creating src/sm/smsh/lib/Makefile
+config.status: creating src/atomic_ops/asm_linkage/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/intel/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/intel/ia32/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/intel/ia32/sys/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/intel/sys/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/sparc/Makefile
+config.status: creating src/atomic_ops/asm_linkage/usr/src/uts/sparc/sys/Makefile
+config.status: creating src/atomic_ops/atomic_ops/Makefile
+config.status: creating src/atomic_ops/atomic_ops/amd64/Makefile
+config.status: creating src/atomic_ops/atomic_ops/i386/Makefile
+config.status: creating src/atomic_ops/atomic_ops/sparc/Makefile
+config.status: creating src/atomic_ops/atomic_ops/sparcv9/Makefile
+config.status: creating config/shore-config.h
+config.status: config/shore-config.h is unchanged
+config.status: executing depfiles commands
+Making clean in src
+make[1]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src'
+Making clean in atomic_ops
+make[2]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops'
+Making clean in atomic_ops
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/atomic_ops'
+Making clean in .
+make[4]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/atomic_ops'
+rm -f    
+make[4]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/atomic_ops'
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/atomic_ops'
+Making clean in asm_linkage
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage'
+Making clean in usr
+make[4]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr'
+Making clean in src
+make[5]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr/src'
+Making clean in .
+make[6]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr/src'
+rm -f    
+make[6]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr/src'
+make[5]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr/src'
+Making clean in .
+make[5]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr'
+rm -f    
+make[5]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr'
+make[4]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage/usr'
+Making clean in .
+make[4]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage'
+rm -f    
+make[4]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage'
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops/asm_linkage'
+Making clean in .
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops'
+test -z "libatomic_ops.a" || rm -f libatomic_ops.a
+rm -f    
+rm -f *.o
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops'
+make[2]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/atomic_ops'
+Making clean in fc
+make[2]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/fc'
+Making clean in tests
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/fc/tests'
+test -z "list1 list2 list3 hash1 hash2 ntime darray memblock heap rc errlogtest random stats stats2 box io ss rand container cuckoo findprime findsizes bitvector basic_sizes" || rm -f list1 list2 list3 hash1 hash2 ntime darray memblock heap rc errlogtest random stats stats2 box io ss rand container cuckoo findprime findsizes bitvector basic_sizes
+rm -f    
+rm -f *.o
+test -z "test_stat_struct_gen.h test_stat_msg_gen.h test_stat_collect_enum_gen.h test_stat_collect_gen.cpp test_stat_dec_gen.cpp test_stat_inc_gen.cpp test_stat_out_gen.cpp" || rm -f test_stat_struct_gen.h test_stat_msg_gen.h test_stat_collect_enum_gen.h test_stat_collect_gen.cpp test_stat_dec_gen.cpp test_stat_inc_gen.cpp test_stat_out_gen.cpp
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/fc/tests'
+Making clean in .
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/fc'
+test -z "libfc.a" || rm -f libfc.a
+rm -f    
+rm -f *.o
+test -z "fc_errmsg_gen.h fc_einfo_gen.h fc_error_def_gen.h fc_error_enum_gen.h fc_einfo_bakw_gen.h" || rm -f fc_errmsg_gen.h fc_einfo_gen.h fc_error_def_gen.h fc_error_enum_gen.h fc_einfo_bakw_gen.h
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/fc'
+make[2]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/fc'
+Making clean in sthread
+make[2]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sthread'
+Making clean in tests
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sthread/tests'
+test -z "thread1 thread2 thread3 thread4 ioperf mmap except pthread_test" || rm -f thread1 thread2 thread3 thread4 ioperf mmap except pthread_test
+rm -f    
+rm -f *.o
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sthread/tests'
+Making clean in .
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sthread'
+test -z "libsthread.a" || rm -f libsthread.a
+rm -f    
+rm -f *.o
+test -z "  sthread_stats_collect_enum_gen.h sthread_stats_msg_gen.h sthread_stats_struct_gen.h st_errmsg_gen.h st_einfo_gen.h st_error_def_gen.h st_error_enum_gen.h st_einfo_bakw_gen.h   sthread_stats_collect_gen.cpp sthread_stats_dec_gen.cpp sthread_stats_inc_gen.cpp sthread_stats_out_gen.cpp  " || rm -f   sthread_stats_collect_enum_gen.h sthread_stats_msg_gen.h sthread_stats_struct_gen.h st_errmsg_gen.h st_einfo_gen.h st_error_def_gen.h st_error_enum_gen.h st_einfo_bakw_gen.h   sthread_stats_collect_gen.cpp sthread_stats_dec_gen.cpp sthread_stats_inc_gen.cpp sthread_stats_out_gen.cpp  
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sthread'
+make[2]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sthread'
+Making clean in common
+make[2]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/common'
+Making clean in tests
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/common/tests'
+test -z "bitmap  kvl opaque vectors errcodes lsns mapp latch1" || rm -f bitmap  kvl opaque vectors errcodes lsns mapp latch1
+rm -f    
+rm -f *.o
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/common/tests'
+Making clean in .
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/common'
+test -z "libcommon.a" || rm -f libcommon.a
+rm -f    
+rm -f *.o
+test -z "opt_errmsg_gen.h opt_einfo_gen.h opt_error_def_gen.h opt_einfo_bakw_gen.h" || rm -f opt_errmsg_gen.h opt_einfo_gen.h opt_error_def_gen.h opt_einfo_bakw_gen.h
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/common'
+make[2]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/common'
+Making clean in sm
+make[2]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm'
+Making clean in smsh
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh'
+Making clean in lib
+make[4]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/lib'
+Making clean in .
+make[5]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/lib'
+test -z "" || rm -f 
+rm -f    
+make[5]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/lib'
+make[4]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/lib'
+Making clean in scripts
+make[4]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/scripts'
+Making clean in .
+make[5]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/scripts'
+test -z "" || rm -f 
+rm -f    
+make[5]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/scripts'
+make[4]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh/scripts'
+Making clean in .
+make[4]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh'
+test -z "smsh random_kick" || rm -f smsh random_kick
+test -z "./log/* ./volumes/*" || rm -f ./log/* ./volumes/*
+rm -f    
+rm -f *.o
+make[4]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh'
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/smsh'
+Making clean in tests
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/tests'
+test -z "file_scan startstop create_rec sort_stream file_scan_many lockid_test lock_cache_test vtable_example rtree_example htab mrbtrees_test	" || rm -f file_scan startstop create_rec sort_stream file_scan_many lockid_test lock_cache_test vtable_example rtree_example htab mrbtrees_test	
+test -z "./log/* ./volumes/*" || rm -f ./log/* ./volumes/*
+rm -f    
+rm -f *.o
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm/tests'
+Making clean in .
+make[3]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm'
+test -z "libsm.a" || rm -f libsm.a
+rm -f    
+rm -f *.o
+test -z "e_errmsg_gen.h e_einfo_gen.h e_error_def_gen.h e_error_enum_gen.h e_einfo_bakw_gen.h sm_stats_t_collect_enum_gen.h sm_stats_t_msg_gen.h sm_stats_t_struct_gen.h  bf_htab_stats_t_collect_enum_gen.h bf_htab_stats_t_msg_gen.h bf_htab_stats_t_struct_gen.h  logfunc_gen.h logtype_gen.h sm_stats_t_collect_gen.cpp sm_stats_t_dec_gen.cpp sm_stats_t_inc_gen.cpp sm_stats_t_out_gen.cpp  bf_htab_stats_t_collect_gen.cpp bf_htab_stats_t_dec_gen.cpp bf_htab_stats_t_inc_gen.cpp bf_htab_stats_t_out_gen.cpp undo_gen.cpp redo_gen.cpp logdef_gen.cpp logstr_gen.cpp logstub_gen.cpp e_error.timestamp logdef.timestamp sm_stats.timestamp" || rm -f e_errmsg_gen.h e_einfo_gen.h e_error_def_gen.h e_error_enum_gen.h e_einfo_bakw_gen.h sm_stats_t_collect_enum_gen.h sm_stats_t_msg_gen.h sm_stats_t_struct_gen.h  bf_htab_stats_t_collect_enum_gen.h bf_htab_stats_t_msg_gen.h bf_htab_stats_t_struct_gen.h  logfunc_gen.h logtype_gen.h sm_stats_t_collect_gen.cpp sm_stats_t_dec_gen.cpp sm_stats_t_inc_gen.cpp sm_stats_t_out_gen.cpp  bf_htab_stats_t_collect_gen.cpp bf_htab_stats_t_dec_gen.cpp bf_htab_stats_t_inc_gen.cpp bf_htab_stats_t_out_gen.cpp undo_gen.cpp redo_gen.cpp logdef_gen.cpp logstr_gen.cpp logstub_gen.cpp e_error.timestamp logdef.timestamp sm_stats.timestamp
+make[3]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm'
+make[2]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src/sm'
+make[2]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src'
+rm -f    
+make[2]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src'
+make[1]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/src'
+Making clean in config
+make[1]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/config'
+rm -f    
+make[1]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt/config'
+make[1]: Entering directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt'
+test -z "dox/ warnings" || rm -f dox/ warnings
+rm -f    
+make[1]: Leaving directory '/home/wjy/SComet/benchmarks/Tailbench/tailbench/shore/shore-mt'
+/bin/bash ./config.status --recheck
+running CONFIG_SHELL=/bin/bash /bin/bash ./configure --enable-shore6 --enable-dbgsymbols SHORE_HOME=../shore-mt/ CXXFLAGS=-std=c++98 -g --no-create --no-recursion
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... unsupported
+checking for g++ option to enable C++98 features... none needed
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of g++... gcc3
+checking for ranlib... ranlib
+configure: Configuring Shore Kits
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking CXX... g++
+checking compiler version... 13.13.13.3.0
+checking Readline location... 

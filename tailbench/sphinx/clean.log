@@ -1,2 +1,1 @@
 rm *.o
-Makefile:46: recipe for target 'clean' failed
