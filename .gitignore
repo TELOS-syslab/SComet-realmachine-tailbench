@@ -1,2 +1,23 @@
-**/lats.bin
+# macOS 系统文件
+.DS_Store
+
+# TailBench 所有生成文件
+tailbench/**/autom4te.cache/
+tailbench/**/*.bin
+tailbench/**/*.txt
+tailbench/**/*.log
+tailbench/**/*.out
+tailbench/**/*.h.in~
+
+# LatBins+LatsText 下所有内容
+LatBins+LatsText/
+LatBins+LatsText/**
+
+# Lats + Plots 下所有内容
+Lats + Plots/
+Lats + Plots/**
+
+# Final 报告文件
+Final-TailBench-Report.pdf
+
 
